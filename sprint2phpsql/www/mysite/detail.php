@@ -31,7 +31,8 @@
 			$query2 = 'select * from tComentarios where cancion_id = '.$cancion_id;
 			$result2 = mysqli_query($db, $query2) or die ('Query error');
 			while ($row = mysqli_fetch_array($result2)) {
-				echo '<li>'.$row['comentario'].'</li>';
+				$formatoFecha = date('YYYY-MM-DD hh:mm:ss', $row[5]);
+				echo '<li>'.$row['comentario'].' - ' . $formatoFecha .'</li>';
 			}
 			mysqli_close($db);
 		?>
