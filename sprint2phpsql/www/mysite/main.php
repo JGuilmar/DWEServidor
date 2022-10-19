@@ -8,7 +8,6 @@
 				border-radius:8px;
 				height: 150px;
 				width: 150px;
-				
 			}
 			table, tr, th, td {
 				tablet-layout: fixed;
@@ -35,8 +34,9 @@
 				//Recorrer el resultado
 				while($row = mysqli_fetch_array($result)) {
 					echo '<tr>';
-				echo '<td>'.$row[1].'</td>';
-					echo '<td><a href="/detail.php?id='.$id.'"><img id=img'.$id.' src='.$row[2].'></a></td>';
+					echo '<td><a href="/detail.php?cancion_id='.$row[0].'">'.$row[0].'</td>';
+					echo '<td>'.$row[1].'</td>';
+					echo '<td><img src='.$row[2].'></td>';
  					echo '<td>'.$row[3].'</td>';
 					echo '<td>'.$row[4].'</td>';
 					echo '</tr>';
