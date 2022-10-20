@@ -5,6 +5,7 @@
 	<body>
 		<?php
 			$cancion_id = $_POST['cancion_id'];
+			$fecha = $_POST['fecha'];
 			$comentario = $_POST['new_comment'];
 
 			echo $comentario;
