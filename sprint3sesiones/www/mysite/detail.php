@@ -1,4 +1,4 @@
-ç<?php
+<?php
 	$db = mysqli_connect('localhost', 'root', '1234', 'mysitedb') or die('Fail');
 ?>
 <html>
@@ -28,11 +28,10 @@
 		<h3>Comentarios</h3>
 		<ul>
 		<?php
-			$query2 = 'select * from tComentarios where cancion_id = '.$cancion_id;
+			$query2 = 'select c.comentario, c.fecha, u.nombre from tComentarios c join tUsuarios u on u.id =c.usuario_id where cancion_id = '.$cancion_id;
 			$result2 = mysqli_query($db, $query2) or die ('Query error');
 			while ($row = mysqli_fetch_array($result2)) {
-				$formatoFecha = date('YYYY-MM-DD HH:MM:SS', $row[5]);
-				echo '<li>'.$row['comentario'].' - ' . $formatoFecha .'</li>';
+				echo '<li>'.$row[0].' - '.$row[1].' - ' .$row[2].'</li>';
 			}
 			mysqli_close($db);
 		?>

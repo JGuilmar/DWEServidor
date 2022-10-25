@@ -4,12 +4,18 @@
 <html>
 	<body>
 		<?php
+			session_start();
+			$user_id_a_insertar = 'NULL';
+			if (!empty($_SESSION['user_id'])){
+				$user_id_a_insertar = $_SESSION['user_id'];
+			}
+
 			$cancion_id = $_POST['cancion_id'];
-			$fecha = $_POST['fecha'];
 			$comentario = $_POST['new_comment'];
 
 			echo $comentario;
-			$query = "insert into tComentarios(comentario, usuario_id, cancion_id) values ('".$comentario."', null, ".$cancion_id.")";
+
+			$query = "insert into tComentarios(comentario, usuario_id, cancion_id, fecha) values ('".$comentario."',".$user_id_a_insertar.", ".$cancion_id.", NOW())";
 
 			mysqli_query($db, $query) or die ("Error");
 
