@@ -9,7 +9,7 @@
 			$comentario = $_POST['new_comment'];
 
 			echo $comentario;
-			$query = "insert into tComentarios(comentario, usuario_id, cancion_id) values ('".$comentario."', null, ".$cancion_id.")";
+			$query = "insert into tComentarios(comentario, usuario_id, cancion_id, fecha) values ('".$comentario."', null, ".$cancion_id.", NOW())";
 
 			mysqli_query($db, $query) or die ("Error");
 
