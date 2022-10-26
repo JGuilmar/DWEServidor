@@ -42,5 +42,6 @@
 			<input type="hidden" name="cancion_id" value="<?php echo $cancion_id; ?>"><br>
 			<input type="submit" value="Comentar">
 		</form>
+		<a href="/logout.php">Cerrar Sesión</a>
 	</body>
 </html>
