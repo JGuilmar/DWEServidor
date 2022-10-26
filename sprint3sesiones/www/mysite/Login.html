@@ -4,10 +4,27 @@
     </head>
     <body>
         <h1>Login</h1>
-        <form action="login.php" method="post">
-            <input type="text" name="f_email" placeholder="E-mail"><br>
-            <input type="password" name="f_password" placeholder="Contraseña"><br>
+        <form action="login.php" method="post" id="formLogin">
+            <input type="text" name="f_email" placeholder="E-mail" id="emailUsuario"><br>
+            <input type="password" name="f_password" placeholder="Contraseña" id="claveUsuario"><br>
             <input type="submit" value="Iniciar Sesión">
         </form>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function(){
+			document.getElementById("formLogin").addEventListener('submit', validarFormulario);
+		});
+
+		function validarFormulario(e) {
+			e.preventDefault();
+			
+			var email = document.getElementById("emailUsuario").value;
+			var clave = document.getElementById("claveUsuario").value;
+
+			if(email.length == 0 || clave.length == 0){
+				alert("Email o contraseña vacíos. Llenar ambos campos.");
+			}
+		}
+	</script>
     </body>
 </html>
