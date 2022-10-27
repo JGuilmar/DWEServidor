@@ -18,7 +18,7 @@
 
 			table {
 				border-collapse: collapse;
-				width: 70%;
+				width: 50%;
 				margin: 0 auto 5rem;
 			}
 
@@ -53,18 +53,11 @@
 			}
 
 			tr:hover:not(#firstrow) {
-				transform: scale(1.2);
-				font-weight: 700;
+				transform: scale(1.1);
+				font-weight: 100;
 				box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.5);
 			}
 
-			table, tr, th, td {
-				tablet-layout: fixed;
-				width: 50%;
-				border-collapse: collapse;
-				border: 3px solid purple;
-				text-align:center;
-			}
 			a {
 				text-decoration: none;
 				color: blue;
@@ -72,11 +65,11 @@
 			a:hover {
 				color: red;
 			}
-			
+
 			a {
 				transition: color 0.8s linear 0.2s;
 			}
-			
+
 			img  {
 				border-radius:8px;
 				height: 150px;
@@ -88,6 +81,7 @@
 		<h1>Canciones</h1>
 		<table>
 			<tr id="firstrow">
+				<th>Id</th>
 				<th>Cancion</th>
 				<th>Imagen Url</th>
 				<th>Artista</th>
