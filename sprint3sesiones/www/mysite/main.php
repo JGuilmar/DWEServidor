@@ -4,11 +4,60 @@
 <html>
 	<head>
 		<style>
-			img  {
-				border-radius:8px;
-				height: 150px;
-				width: 150px;
+			* {
+  				font-family: Helvetica Neue, Arial, sans-serif;
 			}
+
+			body {
+				background-image: linear-gradient(#aaa 25%, #000);
+			}
+
+			h1,table {
+				text-align: center;
+			}
+
+			table {
+				border-collapse: collapse;
+				width: 70%;
+				margin: 0 auto 5rem;
+			}
+
+			th,td {
+				padding: 1.5rem;
+				font-size: 1.3rem;
+			}
+
+			tr {
+				background: hsl(50, 50%, 80%);
+			}
+
+			tr,td {
+				transition: 0.4s ease-in;
+			}
+
+			tr:first-child {
+				background: hsla(12, 100%, 40%, 0.5);
+			}
+
+			tr:nth-child(even) {
+				background: hsla(50, 50%, 80%, 0.7);
+			}
+
+			td:empty {
+				background: hsla(50, 25%, 60%, 0.7);
+			}
+
+			tr:hover:not(#firstrow),tr:hover td:empty {
+				background: #ff0;
+				pointer-events: visible;
+			}
+
+			tr:hover:not(#firstrow) {
+				transform: scale(1.2);
+				font-weight: 700;
+				box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.5);
+			}
+
 			table, tr, th, td {
 				tablet-layout: fixed;
 				width: 50%;
@@ -16,12 +65,29 @@
 				border: 3px solid purple;
 				text-align:center;
 			}
+			a {
+				text-decoration: none;
+				color: blue;
+			}
+			a:hover {
+				color: red;
+			}
+			
+			a {
+				transition: color 0.8s linear 0.2s;
+			}
+			
+			img  {
+				border-radius:8px;
+				height: 150px;
+				width: 150px;
+			}
 		</style>
 	</head>
 	<body>
 		<h1>Canciones</h1>
 		<table>
-			<tr>
+			<tr id="firstrow">
 				<th>Cancion</th>
 				<th>Imagen Url</th>
 				<th>Artista</th>
