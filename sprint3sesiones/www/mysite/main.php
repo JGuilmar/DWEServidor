@@ -78,6 +78,7 @@
 		</style>
 	</head>
 	<body>
+		<a href="/changePassword.php">Cambiar contraseña</a>
 		<h1>Canciones</h1>
 		<table>
 			<tr id="firstrow">
