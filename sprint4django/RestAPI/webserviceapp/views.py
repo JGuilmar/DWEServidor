@@ -13,6 +13,7 @@ def devolver_canciones(request):
 		diccionario = {}
 		diccionario['id'] = fila_sql.id
 		diccionario['nombre'] = fila_sql.nombre
+		diccionario['url_imagen'] = fila.sql.url_imagen
 		diccionario['interprete'] = fila_sql.interprete
 		diccionario['genero'] = fila_sql.genero
 		respuesta_final.append(diccionario)
